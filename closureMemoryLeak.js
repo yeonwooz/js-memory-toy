@@ -1,3 +1,5 @@
+// var os = require('os');
+
 var theThing = null;
 
 var replaceThing = (function () {
@@ -28,4 +30,7 @@ var replaceThing = (function () {
 setInterval(() => {
   let answer = replaceThing();
   console.log(answer);
+  console.log(process.memoryUsage());
+  // console.log(os.freemem())
+  // console.log(os.totalmem())
 }, 1000);
