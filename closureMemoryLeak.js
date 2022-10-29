@@ -2,7 +2,7 @@
 
 var theThing = null;
 
-var replaceThing = (function () {
+var replaceThing = function () {
   var originalThing = theThing;
   // 상위 스코프인 originalThing을 참조하는 스코프를 갖게됨
   // 동시에 theThing 도 참조하게됨.
@@ -25,12 +25,12 @@ var replaceThing = (function () {
     cnt++;
     return cnt;
   };
-})();
-
+};
+let cl = replaceThing();
 setInterval(() => {
-  let answer = replaceThing();
-  console.log(answer);
-  console.log(process.memoryUsage());
+  // console.log(replaceThing()());
+  console.log(cl());
+  // console.log(process.memoryUsage());
   // console.log(os.freemem())
   // console.log(os.totalmem())
 }, 1000);
